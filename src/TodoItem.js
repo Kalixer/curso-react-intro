@@ -6,7 +6,7 @@ function TodoItem(props) {
   function toggleCheck() {
 
     const changedTodos = props.todos.map(todo => {
-      if(todo.id != props.id) {
+      if(todo.id !== props.id) {
         return todo
       } else {
         return ({id: props.id, text: props.text, completed: !props.completed})
@@ -18,7 +18,7 @@ function TodoItem(props) {
   function deleteTodo() {
     const changedTodos = []
     props.todos.forEach(todo => {
-      if(todo.id != props.id) {
+      if(todo.id !== props.id) {
         changedTodos.push(todo)
       }
     })
