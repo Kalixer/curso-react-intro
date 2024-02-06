@@ -4,6 +4,7 @@ import './TodoSearch.css';
 function TodoSearch(props) {
   function EventoFoo(event) {
     props.setSearchValue(event.target.value)
+    props.setInputTodo(event.target.value)
   }
 
   return (
