@@ -1,19 +1,16 @@
 import React from 'react';
 import './TodoSearch.css';
 
-function TodoSearch() {
-  const [searchValue, setSearchValue] = React.useState('')
-  console.log(searchValue)
-
+function TodoSearch(props) {
   function EventoFoo(event) {
-    setSearchValue(event.target.value)
+    props.setSearchValue(event.target.value)
   }
 
   return (
     <input
       placeholder="Cortar cebolla"
       className="TodoSearch"
-      value={searchValue}
+      value={props.searchValue}
       onChange={EventoFoo}
     />
   );
