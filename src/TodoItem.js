@@ -4,9 +4,6 @@ import './TodoItem.css';
 function TodoItem(props) {
 
   function toggleCheck() {
-    console.log(props.id)
-    console.log(props.completed)
-    console.log(props.todos.completed)
 
     const changedTodos = props.todos.map(todo => {
       if(todo.id != props.id) {
@@ -15,22 +12,17 @@ function TodoItem(props) {
         return ({id: props.id, text: props.text, completed: !props.completed})
       }
     })
-    console.log('Changed Todos', changedTodos)
     props.setTodos(changedTodos)
 
-
-
-    
-    // if(!props.completed) {
-    //   props.forEach(todo => {
-        
-    //   });
-    //   props.setTodos({text: props.text, completed: true})
-    // }
-    // console.log('Estado actual', props.completed)
   }
   function deleteTodo() {
-    console.log(props.todos)
+    const changedTodos = []
+    props.todos.forEach(todo => {
+      if(todo.id != props.id) {
+        changedTodos.push(todo)
+      }
+    })
+    props.setTodos(changedTodos)
   }
 
   return (
