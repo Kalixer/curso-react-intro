@@ -21,7 +21,7 @@ function App() {
   const totalTodos = todos.length
   console.log(inputTodo)
 
-  const todosFiltrados = defaultTodos.filter((todo) => todo.text.includes(inputTodo))
+  const todosFiltrados = defaultTodos.filter((todo) => todo.text.toLowerCase().includes(inputTodo))
   
 
   return (
