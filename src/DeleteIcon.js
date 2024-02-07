@@ -5,7 +5,7 @@ function DeleteIcon() {
   return (
     <TodoIcon
         type="delete"
-        color="red"
+        color='gray'
     />
   )
 }
