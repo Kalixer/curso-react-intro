@@ -3,33 +3,33 @@ import './TodoItem.css';
 
 function TodoItem(props) {
 
-  function toggleCheck() {
+  // function toggleCheck() {
 
-    const changedTodos = props.todos.map(todo => {
-      if(todo.id !== props.id) {
-        return todo
-      } else {
-        return ({id: props.id, text: props.text, completed: !props.completed})
-      }
-    })
-    props.setTodos(changedTodos)
+  //   const changedTodos = props.todos.map(todo => {
+  //     if(todo.id !== props.id) {
+  //       return todo
+  //     } else {
+  //       return ({id: props.id, text: props.text, completed: !props.completed})
+  //     }
+  //   })
+  //   props.setTodos(changedTodos)
 
-  }
-  function deleteTodo() {
-    const changedTodos = []
-    props.todos.forEach(todo => {
-      if(todo.id !== props.id) {
-        changedTodos.push(todo)
-      }
-    })
-    props.setTodos(changedTodos)
-  }
+  // }
+  // function deleteTodo() {
+  //   const changedTodos = []
+  //   props.todos.forEach(todo => {
+  //     if(todo.id !== props.id) {
+  //       changedTodos.push(todo)
+  //     }
+  //   })
+  //   props.setTodos(changedTodos)
+  // }
 
   return (
     <li className="TodoItem">
       <span 
       className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
-      onClick={toggleCheck}
+      onClick={props.onComplete}
       >
         V
       </span>
@@ -37,7 +37,7 @@ function TodoItem(props) {
         {props.text}
       </p>
       <span className="Icon Icon-delete"
-      onClick={deleteTodo}
+      onClick={props.onDelete}
       >
         X
       </span>
