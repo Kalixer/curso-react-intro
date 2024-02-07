@@ -8,7 +8,7 @@ import { CreateTodoButton } from './CreateTodoButton';
 const defaultTodos = [
   { id: 0, text: 'Cortar cebolla', completed: true },
   { id: 1, text: 'Tomar el Curso de Intro a React.js', completed: false },
-  { id: 2, text: 'Llorar con la Llorona', completed: false },
+  { id: 2, text: 'Llorar la lloración de hoy', completed: false },
   { id: 3, text: 'LALALALALA', completed: false },
 ];
 
@@ -59,8 +59,6 @@ function App() {
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
-            // todos={todos}
-            // setTodos={setTodos}
           />
         ))}
       </TodoList>

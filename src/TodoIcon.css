@@ -21,7 +21,9 @@
 }
 .Icon-container-delete:hover .Icon-svg{
   fill: red;
+  cursor: pointer;
 }
 .Icon-container-check:hover .Icon-svg{
   fill: green;
+  cursor: pointer;
 }
