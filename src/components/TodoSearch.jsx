@@ -1,5 +1,5 @@
 import React from 'react';
-import './TodoSearch.css';
+import '../styles/TodoSearch.css';
 
 function TodoSearch(props) {
   function EventoFoo(event) {
