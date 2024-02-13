@@ -19,6 +19,14 @@ function App() {
   const completedTodos = (todos.filter((todo) => !!todo.completed)).length
   const totalTodos = todos.length
   
+  console.log('Log 1')
+
+  React.useEffect(() => {
+    console.log('Looooog 2')
+  }, [totalTodos])
+
+  console.log('Log 3')
+  
   const searchedTodos = todos.filter(
     (todo) => {
       return todo.text.toLowerCase().includes(searchValue.toLowerCase())
