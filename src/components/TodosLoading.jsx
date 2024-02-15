@@ -3,7 +3,19 @@ import '../styles/TodosLoading.css'
 
 function TodosLoading() {
   return (
-    <div>Loading...</div>
+    <div className='TodosLoading'>
+        <div className="loader">
+            <div className="loader-square"></div>
+            <div className="loader-square"></div>
+            <div className="loader-square"></div>
+            <div className="loader-square"></div>
+            <div className="loader-square"></div>
+            <div className="loader-square"></div>
+            <div className="loader-square"></div>
+        </div>
+        <h1>Loading...</h1>
+    </div>
+
   )
 }
 
