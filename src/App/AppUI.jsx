@@ -22,7 +22,8 @@ function AppUI(
     }) {
     return (
       <>
-        <TodoCounter completed={completedTodos} total={totalTodos} />
+        {loading && <TodoCounter loading={loading} />}
+        {!loading && <TodoCounter completed={completedTodos} total={totalTodos} />}
         <TodoSearch 
           searchValue={searchValue}
           setSearchValue={setSearchValue}
