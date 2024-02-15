@@ -3,6 +3,9 @@ import { TodoCounter } from '../components/TodoCounter';
 import { TodoSearch } from '../components/TodoSearch';
 import { TodoList } from '../components/TodoList';
 import { TodoItem } from '../components/TodoItem';
+import { TodosLoading } from '../components/TodosLoading';
+import { TodosError } from '../components/TodosError';
+import { EmptyTodos } from '../components/EmptyTodos';
 import { CreateTodoButton } from '../components/CreateTodoButton';
 
 function AppUI(
@@ -25,9 +28,9 @@ function AppUI(
           setSearchValue={setSearchValue}
         />
            <TodoList>
-            {loading && <p>Cargando...</p>}
-            {error && <p>Error de carga</p>}
-            {(!loading && searchedTodos.length === 0) && <p>Crea tu primer TODO</p>}
+            {loading && <TodosLoading/>}
+            {error && <TodosError/>}
+            {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
 
             {(!loading && searchedTodos.length > 0) && searchedTodos.map(todo => (
             <TodoItem
