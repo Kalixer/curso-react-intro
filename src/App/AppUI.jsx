@@ -55,7 +55,14 @@ function AppUI() {
 
         {openModal && (
           <Modal>
-            La funcionalidad de agregar TODOs
+            <section className='windowScreen'>
+              <div className='textContainer'>
+                <p>Agrega un nuevo TODO</p>
+                <p className='deleteX'>X</p>
+              </div>
+            </section>
+            <input type="text" placeholder='Nuevo TODO'/>
+            <button type='button' onClick={() => setOpenModal(false)}>Submit</button>
           </Modal>
         )}
       </>
