@@ -3,7 +3,7 @@ import '../styles/EmptyTodos.css'
 
 function EmptyTodos() {
   return (
-    <div>EmptyTodos</div>
+    <div>There are no TODOs</div>
   )
 }
 

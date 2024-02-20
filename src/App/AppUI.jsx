@@ -10,20 +10,21 @@ import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodoContext } from '../TodoContext/TodoContext';
 
 function AppUI() {
+  const {
+    loading,
+    error,
+    searchedTodos,
+    completeTodo,
+    deleteTodo,
+  } = React.useContext(TodoContext)
+
+  
     return (
       <>
         <TodoCounter />
         <TodoSearch />
 
-          <TodoContext.Consumer>
-            {({
-              loading,
-              error,
-              searchedTodos,
-              completeTodo,
-              deleteTodo,
-            }) => (
-              <TodoList>
+        <TodoList>
             {loading && (
               <>
                 <TodosLoading/>
@@ -44,9 +45,8 @@ function AppUI() {
               onDelete={() => deleteTodo(todo.text)}
             />
           ))}
-              </TodoList>
-            )}
-          </TodoContext.Consumer>
+        </TodoList>
+            
         
         <CreateTodoButton />
       </>
