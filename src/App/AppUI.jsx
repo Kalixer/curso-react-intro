@@ -9,6 +9,7 @@ import { EmptyTodos } from '../components/EmptyTodos';
 import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodoContext } from '../TodoContext/TodoContext';
 import { Modal } from '../components/Modal';
+import { TodoForm } from '../components/TodoForm';
 
 function AppUI() {
   const {
@@ -18,7 +19,6 @@ function AppUI() {
     completeTodo,
     deleteTodo,
     openModal,
-    setOpenModal,
   } = React.useContext(TodoContext)
 
   
@@ -55,14 +55,7 @@ function AppUI() {
 
         {openModal && (
           <Modal>
-            <section className='windowScreen'>
-              <div className='textContainer'>
-                <p>Agrega un nuevo TODO</p>
-                <p className='deleteX'>X</p>
-              </div>
-            </section>
-            <input type="text" placeholder='Nuevo TODO'/>
-            <button type='button' onClick={() => setOpenModal(false)}>Submit</button>
+            <TodoForm />
           </Modal>
         )}
       </>
