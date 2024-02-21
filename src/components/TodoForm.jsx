@@ -1,23 +1,39 @@
 import React from 'react'
+import { FaX } from "react-icons/fa6";
 import '../styles/TodoForm.css'
+
 
 import { TodoContext } from '../TodoContext/TodoContext'
 
-function TodoForm() {
+function TodoForm() {    
     const {
+        addTodo,
         setOpenModal
     } = React.useContext(TodoContext)
-    
+
+    const onSubmit = (evento) => {
+        evento.preventDefault()
+
+        // Lo que escribimos en el input
+        addTodo(evento.target[1].value)
+
+        setOpenModal(false)
+    }
+
     return (
       <>
-          <form className='windowScreen'>
+          <form className='windowScreen' onSubmit={(evento) => onSubmit(evento)}>
             <div className='textContainer'>
               <p>Agrega un nuevo TODO</p>
-              <p className='deleteX' onClick={() => setOpenModal(false)}>X</p>
+              <button type='button' className='deleteX' onClick={() => setOpenModal(false)}>
+                <FaX />
+              </button>
+            </div>
+            <div className='input-container'>
+                <textarea type="text" className='input-form' placeholder='Nuevo TODO'/>
+                <button type='submit' className='TodoForm-button'>Add</button>
             </div>
           </form>
-          <input type="text" placeholder='Nuevo TODO'/>
-          <button type='button' className='TodoForm-button' onClick={() => setOpenModal(false)}>Add</button>
       </>
     )
 }

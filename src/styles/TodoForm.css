@@ -23,6 +23,7 @@
     background-color: #61DAFA;
     color: white;
     width: 50vw;
+    height: 7.2vh;
 }
 .Modal .windowScreen .textContainer{
     display: flex;
@@ -30,42 +31,58 @@
     padding: 0 1rem;
     font-weight: bold;
 }
-
+.Modal .windowScreen .textContainer .deleteX {
+    border: none;
+    background: none;
+}
+.Modal .windowScreen .textContainer .deleteX svg {
+    height: 90%;
+    width: 100%;
+}
 .Modal .windowScreen .textContainer .deleteX:hover {
-    color: red;
+    color: rgb(201, 0, 0);
     cursor: pointer;
 }
 .Modal .windowScreen p{
     padding: 0 1 rem;
 }
-.Modal button {
-    width: 50%;
+.Modal .input-container {
+    /* border: solid white 1px; */
+    height: 42.7vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
-.Modal input {
+.Modal .input-container .input-form {
     position: relative;
-    top: 16px;
-    height: auto;
+    padding-top: 24px;
+    max-width: 100%;
+    height: 100%;
     width: 99%;
     background: transparent;
     color: white;
-    /* color: black; */
     font-weight: bold;
     border-radius: 2px;
     border: none;
     text-align: center;
     font-size: large;
+    resize: vertical;
+    overflow: auto;
+
 }
-.Modal input::placeholder{
+.Modal .input-container .input-form::placeholder{
     color: white;
 }
-.Modal input:focus {
+.Modal .input-container .input-form:focus {
     outline: none;
 }
-.Modal button {
+.Modal .windowScreen .TodoForm-button {
     color: white;
     background-color: #61DAFA;
     border: none;
-    position: absolute;
+    position: relative;
     bottom: 10px;
 
     font-size: 24px;
@@ -75,7 +92,7 @@
     height: 40px;
     width: 200px;
 }
-.Modal button:hover{
+.Modal .TodoForm-button:hover{
     cursor: pointer;
     border: solid grey 2.5px;
 

@@ -40,7 +40,7 @@ function AppUI() {
 
             {(!loading && searchedTodos.length > 0) && searchedTodos.map(todo => (
             <TodoItem
-              key={todo.text}
+              key={todo.id}
               id={todo.id}
               text={todo.text}
               completed={todo.completed}

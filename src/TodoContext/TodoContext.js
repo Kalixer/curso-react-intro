@@ -43,6 +43,14 @@ function TodoProvider({children}) {
         newTodos.splice(todoIndex, 1)
         saveTodos(newTodos)
       }
+
+      const addTodo = (rawTodo) => {
+        const newTodos = [...todos]
+        const lastId = newTodos[todos.length - 1].id
+        const newTodo = { id: lastId + 1, text: rawTodo, completed: false }
+        newTodos.push(newTodo)
+        saveTodos(newTodos)
+      }
     /*
         Aquí creamos toda la lógica de nuestra aplicación que queramos compartir entre los componentes
     */ 
@@ -59,6 +67,7 @@ function TodoProvider({children}) {
             deleteTodo,
             openModal,
             setOpenModal,
+            addTodo,
         }}>
             {children}
         </TodoContext.Provider>
