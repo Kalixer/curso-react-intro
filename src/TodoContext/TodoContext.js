@@ -46,9 +46,14 @@ function TodoProvider({children}) {
 
       const addTodo = (rawTodo) => {
         const newTodos = [...todos]
-        const lastId = newTodos[todos.length - 1].id
-        const newTodo = { id: lastId + 1, text: rawTodo, completed: false }
-        newTodos.push(newTodo)
+        if(todos.length > 0) {
+          const lastId = newTodos[todos.length - 1].id
+          const newTodo = { id: lastId + 1, text: rawTodo, completed: false }
+          newTodos.push(newTodo)
+        } else {
+          const newTodo = { id: 0, text: rawTodo, completed: false }
+          newTodos.push(newTodo)
+        }
         saveTodos(newTodos)
       }
     /*
